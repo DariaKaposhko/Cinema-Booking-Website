@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #621402;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+}
+.container {
+  max-width: 1170px;
+  margin: auto;
+  width: 90%; /*делаем резиновый контейнер чтобы всегда были отступы слева и справа*/
+}
+.header {
+  padding-bottom: 60px;
+  background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
+    url("../img/main_picture.jpg") no-repeat center top / cover;
+}
+.m-menu {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+}
+.nav {
+  position: relative; /*делаем для того, чтобы скрыть меню в кнопку*/
+}
+.menu {
+  list-style: none;
+  display: flex;
+  margin-left: 57px;
+}
+.menu-item {
+  margin-right: 25px;
+}
+.menu-link {
+  text-decoration: none;
+  color: #fff;
+}
+.user {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.avatar-image {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-left: 11px;
+}
+.film {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+}
+.film-title-small {
+  opacity: 0.5;
+  font-size: 24px;
+  line-height: 150%;
+}
+.film-title {
+  font-size: 36px;
+  line-height: 42px;
+  margin-top: 11px;
+  margin-bottom: 23px;
+}
+.film-describtion {
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 560px;
+}
+.film-details {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+.time {
+  display: flex;
+  align-items: center;
+}
+.time-icon {
+  margin-right: 14px;
+}
+.film-trailer {
+  margin: auto;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+.rating-icon {
+  margin-right: 14px;
+}
+.rating-current {
+  font-size: 24px;
+  line-height: 150%;
+}
+.session {
+  margin-top: 62px;
+  padding-top: 46px;
+  padding-bottom: 63px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.session-label {
+  display: block;
+  margin-bottom: 20px;
+}
+.session-date-block {
+  display: flex;
+}
+.session-date-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /*располагаем по вертикали*/
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  transition: background-color 0.2s; /*чтобы при наведении была плавность*/
+}
+
+.session-month {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.session-day {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.session-week {
+  font-size: 19px;
+  line-height: 22px;
+}
+.session-date-item:hover {
+  color: #621402;
+  background-color: #fe8e05;
+}
+.select {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.option {
+  color: #000;
+}
+.select-cinema {
+  width: 470px;
+}
+.scheme {
+  background: rgba(36, 36, 36, 0.18);
+  border-radius: 10px;
+  margin-bottom: 54px;
+}
+.scheme-svg {
+  max-width: 1170px;
+  /* min-height: 600px; */
+}
+.scheme-svg path:not(.light) {
+  fill: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.scheme-svg path:not(.light):hover {
+  fill: rgba(255, 255, 255, 0.5);
+}
+.scheme path.booked,
+.scheme path.booked:hover {
+  fill: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed; /*нельзя дрогать это место*/
+}
+.scheme path.active,
+.scheme path.active:hover {
+  fill: #fe8e05;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 1024px;
+  width: 90%;
+  margin: auto;
+  padding-top: 22px;
+  padding-bottom: 38px;
+}
+.legend-label {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.legend svg {
+  margin-right: 15px;
+}
+
+.legend-free-text,
+.legend-active-text,
+.legend-booked-text {
+  font-size: 16px;
+  line-height: 19px;
+}
+.legend-active-text {
+  color: #fe8e05;
+}
+.legend-free-text,
+.legend-booked-text {
+  opacity: 0.5;
+}
+.price {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price-label {
+  display: block;
+  font-size: 18px;
+  line-height: 21px;
+}
+.price-tag {
+  font-size: 52px;
+  line-height: 61px;
+}
+.button {
+  background: #fe8e05;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  padding: 24px 52px;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .select-cinema {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .session {
+    flex-wrap: wrap; /*говорим, что если блок не помещается в строку, то его нужно перенести*/
+  }
+  .session-date {
+    flex-basis: 70%;
+    margin-bottom: 40px;
+  }
+  .session-time {
+    order: 2; /*задаем порядок*/
+  }
+  .session-cinema {
+    order: 3;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+  .menu {
+    /* делаем для того, чтобы скрыть меню в кнопку */
+    position: absolute;
+    left: 0;
+    top: 40px;
+    margin-left: 20px;
+    padding: 20px;
+    flex-direction: column;
+    background-color: #621402;
+    z-index: 9;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .menu-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .m-menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .film-describtion {
+    margin-right: 30px;
+  }
+  .film {
+    flex-direction: column; /*чтобы расположить эелементы в столбик*/
+  }
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 540px) {
+  .button {
+    padding: 30px 25px;
+  }
+  .legend-label {
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin: 0; */
+  }
+  .session-date {
+    width: 100%;
+  }
+  .session-time {
+    flex-basis: 100%;
+  }
+  .session-cinema {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 390px) {
+  .button {
+    flex-basis: 40%;
+    text-align: center;
+  }
+  .scheme {
+    width: 100%;
+  }
+}
